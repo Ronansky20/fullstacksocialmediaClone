@@ -30,12 +30,14 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
-  int _counter = 0;
+  final List<Todo> _todos = <Todo>[];
+  final TextEditingController _textFieldController = TextEditingController();
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
+  void _addTodoItem(String name) {
+    setState((){
+      _todos.add(Todo(name: name, completed: false));
     });
+    _textFieldController.clear();
   }
 
   @override
@@ -48,15 +50,7 @@ class _TodoListState extends State<TodoList> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+          children: <Widget>[],
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -66,4 +60,10 @@ class _TodoListState extends State<TodoList> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+class Todo {
+  Todo({required this.name, required this.completed});
+  String name;
+  bool completed;
 }
