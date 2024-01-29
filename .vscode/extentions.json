@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"dsznajder.es7-react-js-snippets",
+		"expo.vscode-expo-tools",
+		"msjsdiag.vscode-react-native",
+        "burkeholland.simple-react-snippets"
+	],
+	"unwantedRecommendations": [
+		
+	]
+}
